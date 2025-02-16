@@ -90,7 +90,7 @@ private val DarkColors = darkColorScheme(
     surfaceTint = md_theme_dark_surfaceTint,
 )
 
-@Suppress("Unused")
+@Suppress("Unused", "UnusedReceiverParameter")
 val ColorScheme.systemBarsColor: Color
     get() = Color.Transparent
 

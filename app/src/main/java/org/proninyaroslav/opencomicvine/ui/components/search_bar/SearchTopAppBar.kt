@@ -255,7 +255,7 @@ private fun TopAppBarLayout(
         }
         val layoutHeight = heightPx.roundToInt()
 
-        layout(constraints.maxWidth, layoutHeight) {
+        layout(constraints.maxWidth, layoutHeight.coerceAtLeast(0)) {
             // Search bar
             searchBarPlaceable.placeRelative(
                 x = if (actionIconsPlaceableWidth > 0) {
@@ -290,13 +290,33 @@ private fun PreviewSearchTopAppBar() {
             topBar = {
                 SearchTopAppBar(
                     searchBar = {
+                        val colors = SearchBarDefaults.colors()
                         SearchBar(
-                            query = "",
-                            onQueryChange = {},
-                            onSearch = {},
-                            active = false,
-                            onActiveChange = {},
-                        ) {}
+                            inputField = {
+                                SearchBarDefaults.InputField(
+                                    query = "",
+                                    onQueryChange = {},
+                                    onSearch = {},
+                                    expanded = false,
+                                    onExpandedChange = {},
+                                    enabled = true,
+                                    placeholder = null,
+                                    leadingIcon = null,
+                                    trailingIcon = null,
+                                    colors = colors.inputFieldColors,
+                                    interactionSource = null,
+                                )
+                            },
+                            expanded = false,
+                            onExpandedChange =  {},
+                            modifier = Modifier,
+                            shape = SearchBarDefaults.inputFieldShape,
+                            colors = colors,
+                            tonalElevation = SearchBarDefaults.TonalElevation,
+                            shadowElevation = SearchBarDefaults.ShadowElevation,
+                            windowInsets = SearchBarDefaults.windowInsets,
+                            content =  {},
+                        )
                     },
                     actions = {
                         IconButton(onClick = {}) {
@@ -329,13 +349,33 @@ private fun PreviewSearchTopAppBar_NoActions() {
             topBar = {
                 SearchTopAppBar(
                     searchBar = {
+                        val colors = SearchBarDefaults.colors()
                         SearchBar(
-                            query = "",
-                            onQueryChange = {},
-                            onSearch = {},
-                            active = false,
-                            onActiveChange = {},
-                        ) {}
+                            inputField = {
+                                SearchBarDefaults.InputField(
+                                    query = "",
+                                    onQueryChange = {},
+                                    onSearch = {},
+                                    expanded = false,
+                                    onExpandedChange = {},
+                                    enabled = true,
+                                    placeholder = null,
+                                    leadingIcon = null,
+                                    trailingIcon = null,
+                                    colors = colors.inputFieldColors,
+                                    interactionSource = null,
+                                )
+                            },
+                            expanded = false,
+                            onExpandedChange =  {},
+                            modifier = Modifier,
+                            shape = SearchBarDefaults.inputFieldShape,
+                            colors = colors,
+                            tonalElevation = SearchBarDefaults.TonalElevation,
+                            shadowElevation = SearchBarDefaults.ShadowElevation,
+                            windowInsets = SearchBarDefaults.windowInsets,
+                            content =  {},
+                        )
                     },
                     isSearchBarExpanded = false,
                     scrollBehavior = scrollBehavior,
@@ -360,13 +400,33 @@ private fun PreviewSearchTopAppBar_ExpandedSearch() {
             topBar = {
                 SearchTopAppBar(
                     searchBar = {
+                        val colors = SearchBarDefaults.colors()
                         SearchBar(
-                            query = "",
-                            onQueryChange = {},
-                            onSearch = {},
-                            active = true,
-                            onActiveChange = {},
-                        ) {}
+                            inputField = {
+                                SearchBarDefaults.InputField(
+                                    query = "",
+                                    onQueryChange = {},
+                                    onSearch = {},
+                                    expanded = false,
+                                    onExpandedChange = {},
+                                    enabled = true,
+                                    placeholder = null,
+                                    leadingIcon = null,
+                                    trailingIcon = null,
+                                    colors = colors.inputFieldColors,
+                                    interactionSource = null,
+                                )
+                            },
+                            expanded = false,
+                            onExpandedChange =  {},
+                            modifier = Modifier,
+                            shape = SearchBarDefaults.inputFieldShape,
+                            colors = colors,
+                            tonalElevation = SearchBarDefaults.TonalElevation,
+                            shadowElevation = SearchBarDefaults.ShadowElevation,
+                            windowInsets = SearchBarDefaults.windowInsets,
+                            content =  {},
+                        )
                     },
                     actions = {
                         IconButton(onClick = {}) {

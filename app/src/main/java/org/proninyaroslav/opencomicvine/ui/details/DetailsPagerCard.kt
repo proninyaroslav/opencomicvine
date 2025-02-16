@@ -20,7 +20,6 @@
 package org.proninyaroslav.opencomicvine.ui.details
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -50,7 +49,6 @@ data class DetailsPagerTab(
     @StringRes val text: Int,
 )
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun DetailsPagerCard(
     modifier: Modifier = Modifier,
@@ -108,7 +106,7 @@ fun DetailsPagerCard(
                 )
             }
         }
-        Divider()
+        HorizontalDivider()
         HorizontalPager(
             state = pagerState,
             pageContent = pages,
@@ -117,7 +115,6 @@ fun DetailsPagerCard(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Preview
 @Composable
 private fun PreviewDetailsPagerCard() {

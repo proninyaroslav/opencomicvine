@@ -22,6 +22,7 @@ package org.proninyaroslav.opencomicvine.model
 import android.content.Context
 import android.content.pm.PackageManager
 import dagger.hilt.android.qualifiers.ApplicationContext
+import org.proninyaroslav.opencomicvine.BuildConfig
 import org.proninyaroslav.opencomicvine.R
 import org.proninyaroslav.opencomicvine.ui.supportGetPackageInfo
 import javax.inject.Inject
@@ -47,7 +48,7 @@ class AppInfoProviderImpl @Inject constructor(
             context.packageManager.supportGetPackageInfo(context.packageName).run {
                 AppInfoProvider.State.Success(
                     appName = context.getString(R.string.app_name),
-                    version = versionName,
+                    version = versionName ?: BuildConfig.VERSION_NAME,
                 )
             }
         } catch (e: PackageManager.NameNotFoundException) {

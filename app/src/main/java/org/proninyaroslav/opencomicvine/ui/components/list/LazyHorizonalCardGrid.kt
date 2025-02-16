@@ -20,7 +20,7 @@
 package org.proninyaroslav.opencomicvine.ui.components.list
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.lazy.grid.*
@@ -41,7 +41,7 @@ fun LazyHorizontalCardGrid(
     state: LazyGridState = rememberLazyGridState(),
     content: LazyGridScope.() -> Unit,
 ) {
-    BoxWithConstraints {
+    Box {
         LazyHorizontalGrid(
             rows = GridCells.Fixed(rowCount),
             horizontalArrangement = horizontalArrangement,

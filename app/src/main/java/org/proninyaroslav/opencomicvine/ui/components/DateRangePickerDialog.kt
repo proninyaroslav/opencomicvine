@@ -23,8 +23,8 @@ import android.content.DialogInterface
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.compose.runtime.*
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.core.util.Pair
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 import org.proninyaroslav.opencomicvine.ui.LocalActivity

@@ -19,7 +19,6 @@
 
 package org.proninyaroslav.opencomicvine.ui.favorites
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.foundation.lazy.grid.LazyGridItemScope
@@ -32,7 +31,6 @@ import org.proninyaroslav.opencomicvine.ui.components.FavoriteBox
 import org.proninyaroslav.opencomicvine.ui.components.FavoriteFilledTonalButton
 import org.proninyaroslav.opencomicvine.ui.theme.OpenComicVineTheme
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyGridItemScope.FavoriteItem(
     onFavoriteClick: () -> Unit,
@@ -41,12 +39,11 @@ fun LazyGridItemScope.FavoriteItem(
 ) {
     BaseFavoriteItem(
         onFavoriteClick = onFavoriteClick,
-        modifier = modifier.animateItemPlacement(),
+        modifier = modifier.animateItem(),
         content = content,
     )
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyItemScope.FavoriteItem(
     onFavoriteClick: () -> Unit,
@@ -55,7 +52,7 @@ fun LazyItemScope.FavoriteItem(
 ) {
     BaseFavoriteItem(
         onFavoriteClick = onFavoriteClick,
-        modifier = modifier.animateItemPlacement(),
+        modifier = modifier.animateItem(),
         content = content,
     )
 }

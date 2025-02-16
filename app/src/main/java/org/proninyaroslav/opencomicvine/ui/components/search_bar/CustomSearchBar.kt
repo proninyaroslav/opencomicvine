@@ -46,35 +46,52 @@ fun CustomSearchBar(
     content: @Composable ColumnScope.() -> Unit,
 ) {
     var actionButtonClicked by remember { mutableStateOf(false) }
+    val expandedChange: (Boolean) -> Unit = {
+        if (actionButtonClicked) {
+            actionButtonClicked = false
+        } else {
+            onActiveChange(it)
+        }
+    }
+
+    val colors1 = SearchBarDefaults.colors()
     SearchBar(
-        query = query,
-        onQueryChange = onQueryChange,
-        onSearch = onSearch,
-        active = active,
-        onActiveChange = {
-            if (actionButtonClicked) {
-                actionButtonClicked = false
-            } else {
-                onActiveChange(it)
-            }
-        },
-        placeholder = placeholder,
-        leadingIcon = {
-            LeadingButton(
-                active = active,
-                onActiveChange = onActiveChange,
-            )
-        },
-        trailingIcon = {
-            TrailingButton(
+        inputField = {
+            SearchBarDefaults.InputField(
                 query = query,
-                active = active,
-                actions = actions,
                 onQueryChange = onQueryChange,
+                onSearch = onSearch,
+                expanded = active,
+                onExpandedChange = expandedChange,
+                enabled = true,
+                placeholder = placeholder,
+                leadingIcon = {
+                    LeadingButton(
+                        active = active,
+                        onActiveChange = onActiveChange,
+                    )
+                },
+                trailingIcon = {
+                    TrailingButton(
+                        query = query,
+                        active = active,
+                        actions = actions,
+                        onQueryChange = onQueryChange,
+                    )
+                },
+                colors = colors1.inputFieldColors,
+                interactionSource = null,
             )
         },
-        content = content,
+        expanded = active,
+        onExpandedChange = expandedChange,
         modifier = modifier,
+        shape = SearchBarDefaults.inputFieldShape,
+        colors = colors1,
+        tonalElevation = SearchBarDefaults.TonalElevation,
+        shadowElevation = SearchBarDefaults.ShadowElevation,
+        windowInsets = SearchBarDefaults.windowInsets,
+        content = content,
     )
 }
 
@@ -92,34 +109,49 @@ fun CustomDockedSearchBar(
     content: @Composable ColumnScope.() -> Unit,
 ) {
     var actionButtonClicked by remember { mutableStateOf(false) }
+    val expandedChange: (Boolean) -> Unit = {
+        if (actionButtonClicked) {
+            actionButtonClicked = false
+        } else {
+            onActiveChange(it)
+        }
+    }
+    val colors1 = SearchBarDefaults.colors()
     DockedSearchBar(
-        query = query,
-        onQueryChange = onQueryChange,
-        onSearch = onSearch,
-        active = active,
-        onActiveChange = {
-            if (actionButtonClicked) {
-                actionButtonClicked = false
-            } else {
-                onActiveChange(it)
-            }
-        },
-        placeholder = placeholder,
-        leadingIcon = {
-            LeadingButton(
-                active = active,
-                onActiveChange = onActiveChange,
-            )
-        },
-        trailingIcon = {
-            TrailingButton(
+        inputField = {
+            SearchBarDefaults.InputField(
                 query = query,
-                active = active,
-                actions = actions,
                 onQueryChange = onQueryChange,
+                onSearch = onSearch,
+                expanded = active,
+                onExpandedChange = expandedChange,
+                enabled = true,
+                placeholder = placeholder,
+                leadingIcon = {
+                    LeadingButton(
+                        active = active,
+                        onActiveChange = onActiveChange,
+                    )
+                },
+                trailingIcon = {
+                    TrailingButton(
+                        query = query,
+                        active = active,
+                        actions = actions,
+                        onQueryChange = onQueryChange,
+                    )
+                },
+                colors = colors1.inputFieldColors,
+                interactionSource = null,
             )
         },
+        expanded = active,
+        onExpandedChange = expandedChange,
         modifier = modifier.padding(top = 8.dp),
+        shape = SearchBarDefaults.dockedShape,
+        colors = colors1,
+        tonalElevation = SearchBarDefaults.TonalElevation,
+        shadowElevation = SearchBarDefaults.ShadowElevation,
         content = content,
     )
 }

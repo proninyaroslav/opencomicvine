@@ -19,7 +19,6 @@
 
 package org.proninyaroslav.opencomicvine.ui.details.category.character
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.rememberPagerState
@@ -74,7 +73,6 @@ data class CharacterOtherInfoState(
 
 private val IssueCardWidth = 150.dp
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CharacterOtherInfo(
     state: CharacterOtherInfoState?,

@@ -554,7 +554,7 @@ private fun TopAppBarLayout(
         val layoutHeight = heightPx?.roundToInt()
             ?: (imageBannerHeight + titlePlaceable.height)
 
-        layout(constraints.maxWidth, layoutHeight) {
+        layout(constraints.maxWidth, layoutHeight.coerceAtLeast(0)) {
             // Image banner
             imageBannerPlaceable.placeRelative(
                 x = 0,

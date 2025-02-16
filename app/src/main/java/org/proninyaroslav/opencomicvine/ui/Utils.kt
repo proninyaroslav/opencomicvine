@@ -25,7 +25,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -186,7 +185,6 @@ fun Bitmap.CompressFormat.getMimeType(): String = when (this) {
     else -> "image/webp"
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun <T> PagerState.visibilityWrapper(
     page: Int,

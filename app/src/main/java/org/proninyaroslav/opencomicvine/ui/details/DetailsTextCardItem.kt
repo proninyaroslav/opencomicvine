@@ -36,7 +36,6 @@ import io.github.fornewid.placeholder.material3.placeholder
 import org.proninyaroslav.opencomicvine.R
 import org.proninyaroslav.opencomicvine.ui.theme.OpenComicVineTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsTextCardItem(
     text: (@Composable () -> Unit)?,

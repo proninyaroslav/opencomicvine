@@ -19,7 +19,6 @@
 
 package org.proninyaroslav.opencomicvine.ui.search.history
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -103,7 +102,6 @@ fun HistoryList(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun LazyItemScope.HistoryItem(
     info: SearchHistoryInfo,
@@ -129,7 +127,7 @@ private fun LazyItemScope.HistoryItem(
         },
         modifier = modifier
             .clickable(onClick = onClick)
-            .animateItemPlacement(),
+            .animateItem(),
     )
 }
 

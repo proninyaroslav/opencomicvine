@@ -19,7 +19,6 @@
 
 package org.proninyaroslav.opencomicvine.ui.details.category.volume
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -69,7 +68,6 @@ data class VolumeOtherInfoState(
     val objects: Flow<PagingData<VolumeObjectItem>>,
 )
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun VolumeOtherInfo(
     state: VolumeOtherInfoState?,

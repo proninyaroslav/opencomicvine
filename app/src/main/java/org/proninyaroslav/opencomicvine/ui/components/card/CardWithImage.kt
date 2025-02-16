@@ -34,7 +34,6 @@ import org.proninyaroslav.opencomicvine.R
 import org.proninyaroslav.opencomicvine.ui.components.defaultPlaceholder
 import org.proninyaroslav.opencomicvine.ui.theme.OpenComicVineTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CardWithImage(
     modifier: Modifier = Modifier,
